@@ -15,15 +15,22 @@ namespace Terminal.Commands
 
         private string Start()
         {
+            string output = string.Empty;
+            string current = Directory.GetCurrentDirectory();
             if (_values.Count > 1)
                 return "cd: too many arguments";
             if (_values.Count <= 0)
-                return string.Empty;
-            string output = string.Empty;
-            string current = Directory.GetCurrentDirectory();
+            {
+                Directory.SetCurrentDirectory("\\");
+                return output;
+            }
+            
             try
             {
-                Directory.SetCurrentDirectory(current + "\\" + _values[0]);
+                if (Path.IsPathRooted(_values[0]))
+                    Directory.SetCurrentDirectory(_values[0]);
+                else
+                    Directory.SetCurrentDirectory(current + "\\" + _values[0]);
             }
             catch
             {

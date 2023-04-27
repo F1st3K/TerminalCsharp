@@ -13,7 +13,7 @@ namespace Terminal
         public string Run()
         {
             string view = "┌─[-]─[" + Environment.UserName + "@" + Environment.UserDomainName + "]" +
-                    "─[" + Directory.GetCurrentDirectory() + "]\n└──$";
+                    "─[" + Directory.GetCurrentDirectory().Replace("\\", "/") + "]\n└──$";
             Console.Write(view);
             return Console.ReadLine();
         }
