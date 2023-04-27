@@ -10,6 +10,8 @@ namespace Terminal
         {
             { "ls", new ListFiles().Run},
             { "cd", new ChangeDirectory().Run},
+            { "pwd", new PrintWorkingDirectory().Run},
+            { "arch", new Architecture().Run},
         };
         public bool CommandIsExist(string value)
         {

@@ -43,9 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\Architecture.cs" />
     <Compile Include="Commands\ChangeDirectory.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\ListFiles.cs" />
+    <Compile Include="Commands\PrintWorkingDirectory.cs" />
     <Compile Include="Executor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
