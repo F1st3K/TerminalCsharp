@@ -23,6 +23,11 @@ namespace Terminal
             Console.WriteLine(value);
         }
 
+        public void CommandNotFound()
+        {
+            Console.WriteLine("command not found");
+        }
+
         public void Stop()
         {
             Console.WriteLine("Terminal is stoped!");

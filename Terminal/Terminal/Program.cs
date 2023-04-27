@@ -10,6 +10,7 @@
         static void Work()
         {
             var view = new View();
+            var executor = new Executor();
             view.Start();
             while (true)
             {
@@ -21,7 +22,9 @@
                     view.Stop();
                     break;
                 }
-
+                if (executor.CommandIsExist(commands[0]))
+                    view.Output(executor.RunCommand(commands));
+                else view.CommandNotFound();
             }
         }
     }
