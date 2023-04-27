@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\ChangeDirectory.cs" />
+    <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\ListFiles.cs" />
     <Compile Include="Executor.cs" />
     <Compile Include="Program.cs" />

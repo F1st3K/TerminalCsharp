@@ -23,9 +23,14 @@ namespace Terminal
             Console.WriteLine(value);
         }
 
-        public void CommandNotFound()
+        public void Clear()
         {
-            Console.WriteLine("command not found");
+            Console.Clear();
+        }
+
+        public void CommandNotFound(string command)
+        {
+            Console.WriteLine(command + ": command not found");
         }
 
         public void Stop()

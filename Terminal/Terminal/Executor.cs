@@ -8,7 +8,8 @@ namespace Terminal
     {
         private Dictionary<string, Func<string[], string>> _listCommands = new Dictionary<string, Func<string[], string>>()
         {
-            { "ls", ListFiles.Run},
+            { "ls", new ListFiles().Run},
+            { "cd", new ChangeDirectory().Run},
         };
         public bool CommandIsExist(string value)
         {
@@ -17,8 +18,13 @@ namespace Terminal
 
         public string RunCommand(string[] values)
         {
+            if (values.Length < 1)
+                throw new ArgumentException("values is no null");
             _listCommands.TryGetValue(values[0], out var command);
-            return command.Invoke(values);
+            string[] arguments = new string[values.Length - 1]; ;
+            for (int i = 1, j = 0; i < values.Length; i++, j++)
+                arguments[j] = values[i];
+            return command.Invoke(arguments);
         }
     }
 }

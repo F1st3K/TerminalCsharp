@@ -1,16 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.IO;
 
 namespace Terminal.Commands
 {
-    internal static class ListFiles
+    internal class ListFiles : Command
     {
-        static public string Run(string[] values)
+        public ListFiles() : base()
         {
-            return String.Empty;
+            PossibleKeys.Add("-a");
+            PossibleKeys.Add("-r");
+            PossibleKeys.Add("-t");
+            _command = Start;
+        }
+
+        private string Start()
+        {
+            string output = string.Empty;
+            var current = Directory.GetCurrentDirectory();
+            var list = new List<string>();
+            list.AddRange(Directory.GetFileSystemEntries(current));
+            for (int i = 0; i < list.Count; i++)
+            {
+                list[i] = list[i].Replace(current + "\\", string.Empty);
+            }
+            foreach (var file in list)
+            {
+                output += "\t"+file;
+            }
+            return output;
         }
     }
 }

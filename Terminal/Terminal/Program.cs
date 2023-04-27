@@ -14,17 +14,23 @@
             view.Start();
             while (true)
             {
-                string[] commands = view.Run().Split(' ');
+                string[] commands = view.Run().Split(new char[] {' '}, System.StringSplitOptions.RemoveEmptyEntries);
                 if (commands.Length == 0)
                     continue;
-                if (commands[0] == "exit")
+                switch (commands[0])
                 {
-                    view.Stop();
-                    break;
+                    case "exit":
+                        view.Stop();
+                        return;
+                    case "clear":
+                        view.Clear();
+                        continue;
+                    default:
+                        break;
                 }
                 if (executor.CommandIsExist(commands[0]))
                     view.Output(executor.RunCommand(commands));
-                else view.CommandNotFound();
+                else view.CommandNotFound(commands[0]);
             }
         }
     }
