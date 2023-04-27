@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 
 namespace Terminal.Commands
 {
@@ -7,9 +6,6 @@ namespace Terminal.Commands
     {
         public ChangeDirectory() : base()
         {
-            PossibleKeys.Add("-a");
-            PossibleKeys.Add("-r");
-            PossibleKeys.Add("-t");
             _command = Start;
         }
 

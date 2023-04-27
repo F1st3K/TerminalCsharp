@@ -9,7 +9,7 @@ namespace Terminal.Commands
         {
             PossibleKeys.Add("-a");
             PossibleKeys.Add("-r");
-            PossibleKeys.Add("-t");
+            PossibleKeys.Add("-A");
             _command = Start;
         }
 
@@ -47,13 +47,29 @@ namespace Terminal.Commands
             {
                 return "cd:\t" + _values[0] + ": No such file or directory";
             }
+
             for (int i = 0; i < list.Count; i++)
             {
                 if (Directory.Exists(list[i]))
                     list[i] += "\\";
                 list[i] = list[i].Replace("\\", "/");
-                list[i] = "\t" + list[i].Replace(current, string.Empty);
+                list[i] = list[i].Replace(current, string.Empty).Substring(1);                
             }
+            if (_keys.Contains(PossibleKeys[0]) == false && _keys.Contains(PossibleKeys[2]) == false)
+                for (int i = 0; i<list.Count;i++)
+                    if (list[i].ToCharArray()[0] == '.')
+                        list.RemoveAt(i);
+
+            if (_keys.Contains(PossibleKeys[0]) == true && _keys.Contains(PossibleKeys[2]) == false ||
+                _keys.Contains(PossibleKeys[0]) == true && _keys.Contains(PossibleKeys[2]) == true && 
+                _keys.IndexOf(PossibleKeys[0]) > _keys.IndexOf(PossibleKeys[2]))
+            {
+                list.Insert(0, "../");
+                list.Insert(0, "./");
+            }
+            if (_keys.Contains(PossibleKeys[1]))
+                list.Reverse();
+
             foreach (var file in list)
             {
                 output += "\n\t" + file;
