@@ -17,6 +17,7 @@ namespace Terminal
             { "cat", new Concatenate().Run},
             { "head", new Head().Run},
             { "date", new Date().Run},
+            { "rm", new Remove().Run},
         };
         public bool CommandIsExist(string value)
         {
