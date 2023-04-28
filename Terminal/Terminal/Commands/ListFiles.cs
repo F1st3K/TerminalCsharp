@@ -53,7 +53,9 @@ namespace Terminal.Commands
                 if (Directory.Exists(list[i]))
                     list[i] += "\\";
                 list[i] = list[i].Replace("\\", "/");
-                list[i] = list[i].Replace(current, string.Empty).Substring(1);                
+                list[i] = list[i].Replace(current, string.Empty);
+                if (list[i].ToCharArray()[0] == '/')
+                    list[i] = list[i].Substring(1);                
             }
             if (_keys.Contains("-a") == false && _keys.Contains("-A") == false)
                 for (int i = 0; i<list.Count;i++)

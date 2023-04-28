@@ -14,6 +14,7 @@ namespace Terminal
             { "arch", new Architecture().Run},
             { "mkdir", new MakeDirectory().Run},
             { "rmdir", new RemoveDirectory().Run},
+            { "cat", new Concatenate().Run},
         };
         public bool CommandIsExist(string value)
         {
