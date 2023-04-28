@@ -14,6 +14,16 @@ namespace Terminal.Commands
             _command = Start;
         }
 
+        public static string[] Read(string path)
+        {
+            string current = string.Empty;
+            if (Path.IsPathRooted(path) == false)
+                current = Directory.GetCurrentDirectory() + "\\";
+            if (File.Exists(current + path) == false)
+                throw new ArgumentException("No such file or directory ");
+            return File.ReadAllLines(current + path);
+        }
+
         private string Start()
         {
             if (_keys.Contains("->"))
@@ -44,15 +54,17 @@ namespace Terminal.Commands
             var output = string.Empty;
             foreach (var filename in _values)
             {
-                string current = string.Empty;
-                if (Path.IsPathRooted(filename) == false)
-                    current = Directory.GetCurrentDirectory() + "\\";
-                if (File.Exists(current + filename) == false)
+                try
+                {
+                    var lines = Read(filename);
+                    lines = ChangeView(lines);
+                    foreach (var line in lines)
+                        output += "\n" + line;
+                }
+                catch
+                {
                     return "cat: " + filename.Replace("\\", "/") + ": No such file or directory ";
-                var lines = File.ReadAllLines(current + filename);
-                lines = ChangeView(lines);
-                foreach (var line in lines)
-                    output += "\n" + line;
+                }
             }
             return output;
         }

@@ -47,6 +47,7 @@
     <Compile Include="Commands\ChangeDirectory.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\Concatenate.cs" />
+    <Compile Include="Commands\Head.cs" />
     <Compile Include="Commands\ListFiles.cs" />
     <Compile Include="Commands\MakeDirectory.cs" />
     <Compile Include="Commands\PrintWorkingDirectory.cs" />
