@@ -32,19 +32,20 @@ namespace Terminal.Commands
                             Directory.Delete(current + file, true);
                         else Directory.Delete(current + file);
                     }
-                    else
+                    else if (File.Exists(current + file))
                     {
                         File.Delete(current + file);
                     }
+                    else throw new Exception("No such file or directory");
 
                     if (_keys.Contains("-v"))
                         output += "\nremoved " + file;
                 }
-                catch
+                catch (Exception ex)
                 {
                     if (_keys.Contains("-f"))
                         continue;
-                    output += "\nrm: cannot remove " + file + ": No such file or directory";
+                    output += "\nrm: cannot remove " + file + ": " + ex.Message;
                     break;
                 }
             }
