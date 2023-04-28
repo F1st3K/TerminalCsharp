@@ -55,19 +55,19 @@ namespace Terminal.Commands
                 list[i] = list[i].Replace("\\", "/");
                 list[i] = list[i].Replace(current, string.Empty).Substring(1);                
             }
-            if (_keys.Contains(PossibleKeys[0]) == false && _keys.Contains(PossibleKeys[2]) == false)
+            if (_keys.Contains("-a") == false && _keys.Contains("-A") == false)
                 for (int i = 0; i<list.Count;i++)
                     if (list[i].ToCharArray()[0] == '.')
                         list.RemoveAt(i);
 
-            if (_keys.Contains(PossibleKeys[0]) == true && _keys.Contains(PossibleKeys[2]) == false ||
-                _keys.Contains(PossibleKeys[0]) == true && _keys.Contains(PossibleKeys[2]) == true && 
-                _keys.IndexOf(PossibleKeys[0]) > _keys.IndexOf(PossibleKeys[2]))
+            if (_keys.Contains("-a") == true && _keys.Contains("-A") == false ||
+                _keys.Contains("-a") == true && _keys.Contains("-A") == true && 
+                _keys.IndexOf("-a") > _keys.IndexOf("-A"))
             {
                 list.Insert(0, "../");
                 list.Insert(0, "./");
             }
-            if (_keys.Contains(PossibleKeys[1]))
+            if (_keys.Contains("-r"))
                 list.Reverse();
 
             foreach (var file in list)

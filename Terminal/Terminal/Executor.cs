@@ -12,6 +12,8 @@ namespace Terminal
             { "cd", new ChangeDirectory().Run},
             { "pwd", new PrintWorkingDirectory().Run},
             { "arch", new Architecture().Run},
+            { "mkdir", new MakeDirectory().Run},
+            { "rmdir", new RemoveDirectory().Run},
         };
         public bool CommandIsExist(string value)
         {
