@@ -18,7 +18,25 @@ namespace Terminal.Commands
         {
             if (_keys.Contains("->"))
                 return WriteFile();
-            else return ReadFile();
+            else
+            {
+                if (_values.Count <= 0)
+                    return OnlineMode();
+                return ReadFile();
+            }
+        }
+
+        private string OnlineMode()
+        {
+            while (true)
+            {
+                var line = Console.ReadLine();
+                if (line == "^exit")
+                    break;
+                line = ChangeView(new string[] { line })[0];
+                Console.WriteLine(line);
+            }
+            return string.Empty;
         }
 
         private string ReadFile()
@@ -53,14 +71,15 @@ namespace Terminal.Commands
 
         private string WriteFile()
         {
+            if (_values.Count <= 0)
+                return "syntax error near unexpected token `newline'";
             var listLines = new List<string>();
             while (true)
             {
-                var key = Console.ReadKey(true);
-                if (key.Modifiers == ConsoleModifiers.Control && key.Key == ConsoleKey.O)
+                var line = Console.ReadLine();
+                if (line == "^exit")
                     break;
-                Console.Write(key.KeyChar);
-                listLines.Add(Console.ReadLine());
+                listLines.Add(line);
             }
             var lines = ChangeView(listLines.ToArray());
             string current = string.Empty;
