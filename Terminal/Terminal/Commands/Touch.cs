@@ -3,13 +3,10 @@ using System.IO;
 
 namespace Terminal.Commands
 {
-    class Remove : Command
+    class Touch : Command
     {
-        public Remove() : base()
+        public Touch() : base()
         {
-            PossibleKeys.Add("-f");
-            PossibleKeys.Add("-r");
-            PossibleKeys.Add("-v");
             _command = Start;
         }
 
@@ -17,7 +14,7 @@ namespace Terminal.Commands
         {
             string output = string.Empty;
             if (_values.Count <= 0)
-                return "rm: missing operand";
+                return "touch: missing operand";
             foreach (var file in _values)
             {
                 string current = Directory.GetCurrentDirectory() + "\\";
@@ -25,21 +22,9 @@ namespace Terminal.Commands
                 {
                     if (Path.IsPathRooted(_values[0]))
                         current = string.Empty;
-
-                    if (Directory.Exists(current + file))
-                    {
-                        if (_keys.Contains("-r"))
-                            Directory.Delete(current + file, true);
-                        else Directory.Delete(current + file);
-                    }
-                    else if (File.Exists(current + file))
-                    {
-                        File.Delete(current + file);
-                    }
-                    else throw new Exception("No such file or directory");
-
-                    if (_keys.Contains("-v"))
-                        output += "\nremoved " + file;
+                    var f = File.Open(current + file, FileMode.OpenOrCreate);
+                    f.Close();
+                    File.SetLastWriteTime(current + file, DateTime.Now);
                 }
                 catch (Exception ex)
                 {
