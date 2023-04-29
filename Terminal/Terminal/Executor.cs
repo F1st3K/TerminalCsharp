@@ -19,6 +19,7 @@ namespace Terminal
             { "date", new Date().Run},
             { "rm", new Remove().Run},
             { "touch", new Touch().Run},
+            { "ps", new Processes().Run},
         };
         public bool CommandIsExist(string value)
         {
