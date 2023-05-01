@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 
 namespace Terminal.Commands
 {
@@ -8,14 +10,17 @@ namespace Terminal.Commands
         private protected List<string> _keys;
         private protected List<string> _values;
         private protected Func<string> _command;
+        private protected string _name;
 
         public List<string> PossibleKeys { get; private protected set; }
 
-        public Command()
+        public Command(string name)
         {
             _keys = new List<string>();
             _values = new List<string>();
             PossibleKeys = new List<string>();
+            _name = name;
+            PossibleKeys.Add("--help");
         }
 
         public string Run(string[] arguments)
@@ -24,6 +29,16 @@ namespace Terminal.Commands
             var check = CheckKeys();
             if (check != String.Empty)
                 return check;
+            if (_keys.Contains("--help"))
+                try
+                {
+                    var start = Directory.GetParent(Assembly.GetExecutingAssembly().Location);
+                    return File.ReadAllText(start + "\\help\\" + _name + ".help");
+                }
+                catch
+                {
+                    return "No such help information";
+                }
             return _command.Invoke();
         }
 

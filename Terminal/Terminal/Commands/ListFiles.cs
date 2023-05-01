@@ -5,7 +5,7 @@ namespace Terminal.Commands
 {
     internal class ListFiles : Command
     {
-        public ListFiles() : base()
+        public ListFiles(string name) : base(name)
         {
             PossibleKeys.Add("-a");
             PossibleKeys.Add("-r");

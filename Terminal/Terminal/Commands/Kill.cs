@@ -5,7 +5,7 @@ namespace Terminal.Commands
 {
     internal class Kill : Command
     {
-        public Kill() : base()
+        public Kill(string name) : base(name)
         {
             PossibleKeys.Add("-l");
             PossibleKeys.Add("-v");

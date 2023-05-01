@@ -6,7 +6,7 @@ namespace Terminal.Commands
 {
     internal class Processes : Command
     {
-        public Processes() : base()
+        public Processes(string name) : base(name)
         {
             PossibleKeys.Add("-A");
             PossibleKeys.Add("-e");

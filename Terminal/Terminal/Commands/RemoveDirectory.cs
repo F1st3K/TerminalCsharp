@@ -4,7 +4,7 @@ namespace Terminal.Commands
 {
     internal class RemoveDirectory : Command
     {
-        public RemoveDirectory() : base()
+        public RemoveDirectory(string name) : base(name)
         {
             PossibleKeys.Add("-p");
             PossibleKeys.Add("-v");

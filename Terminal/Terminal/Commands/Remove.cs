@@ -5,7 +5,7 @@ namespace Terminal.Commands
 {
     internal class Remove : Command
     {
-        public Remove() : base()
+        public Remove(string name) : base(name)
         {
             PossibleKeys.Add("-f");
             PossibleKeys.Add("-r");

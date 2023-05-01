@@ -4,7 +4,7 @@ namespace Terminal.Commands
 {
     internal class MakeDirectory : Command
     {
-        public MakeDirectory() : base()
+        public MakeDirectory(string name) : base(name)
         {
             PossibleKeys.Add("-p");
             PossibleKeys.Add("-v");

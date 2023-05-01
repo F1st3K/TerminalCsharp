@@ -5,7 +5,7 @@ namespace Terminal.Commands
 {
     internal class WordCount : Command
     {
-        public WordCount() : base()
+        public WordCount(string name) : base(name)
         {
             PossibleKeys.Add("-m");
             PossibleKeys.Add("-c");

@@ -6,7 +6,7 @@ namespace Terminal.Commands
 {
     internal class Concatenate : Command
     {
-        public Concatenate() : base()
+        public Concatenate(string name) : base(name)
         {
             PossibleKeys.Add("->");
             PossibleKeys.Add("-b");

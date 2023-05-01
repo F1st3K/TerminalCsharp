@@ -5,7 +5,7 @@ namespace Terminal.Commands
 {
     internal class Touch : Command
     {
-        public Touch() : base()
+        public Touch(string name) : base(name)
         {
             _command = Start;
         }

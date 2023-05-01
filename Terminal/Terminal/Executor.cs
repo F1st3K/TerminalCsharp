@@ -8,20 +8,20 @@ namespace Terminal
     {
         private Dictionary<string, Func<string[], string>> _listCommands = new Dictionary<string, Func<string[], string>>()
         {
-            { "ls", new ListFiles().Run},
-            { "cd", new ChangeDirectory().Run},
-            { "pwd", new PrintWorkingDirectory().Run},
-            { "arch", new Architecture().Run},
-            { "mkdir", new MakeDirectory().Run},
-            { "rmdir", new RemoveDirectory().Run},
-            { "cat", new Concatenate().Run},
-            { "head", new Head().Run},
-            { "date", new Date().Run},
-            { "rm", new Remove().Run},
-            { "touch", new Touch().Run},
-            { "ps", new Processes().Run},
-            { "kill", new Kill().Run},
-            { "wc", new WordCount().Run},
+            { "ls", new ListFiles("ls").Run},
+            { "cd", new ChangeDirectory("cd").Run},
+            { "pwd", new PrintWorkingDirectory("pwd").Run},
+            { "arch", new Architecture("arch").Run},
+            { "mkdir", new MakeDirectory("mkdir").Run},
+            { "rmdir", new RemoveDirectory("rmdir").Run},
+            { "cat", new Concatenate("cat").Run},
+            { "head", new Head("head").Run},
+            { "date", new Date("date").Run},
+            { "rm", new Remove("rm").Run},
+            { "touch", new Touch("touch").Run},
+            { "ps", new Processes("ps").Run},
+            { "kill", new Kill("kill").Run},
+            { "wc", new WordCount("wc").Run},
         };
         public bool CommandIsExist(string value)
         {

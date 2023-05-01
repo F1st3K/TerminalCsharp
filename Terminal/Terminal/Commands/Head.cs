@@ -4,7 +4,7 @@ namespace Terminal.Commands
 {
     internal class Head : Command
     {
-        public Head() : base()
+        public Head(string name) : base(name)
         {
             PossibleKeys.Add("-n");
             PossibleKeys.Add("-v");

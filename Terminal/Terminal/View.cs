@@ -12,9 +12,23 @@ namespace Terminal
 
         public string Run()
         {
-            string view = "┌─[-]─[" + Environment.UserName + "@" + Environment.UserDomainName + "]" +
-                    "─[" + Directory.GetCurrentDirectory().Replace("\\", "/") + "]\n└──$";
-            Console.Write(view);
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("┌──[");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(Environment.UserName);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write("@");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write(Environment.UserDomainName);
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("]─[");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write(Directory.GetCurrentDirectory().Replace("\\", "/"));
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("]\n└──");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write("$");
+            Console.ResetColor();
             return Console.ReadLine();
         }
 

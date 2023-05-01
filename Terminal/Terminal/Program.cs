@@ -1,4 +1,6 @@
-﻿namespace Terminal
+﻿using System.Reflection;
+
+namespace Terminal
 {
     class Program
     {

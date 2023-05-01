@@ -4,7 +4,7 @@ namespace Terminal.Commands
 {
     internal class ChangeDirectory : Command
     {
-        public ChangeDirectory() : base()
+        public ChangeDirectory(string name) : base(name)
         {
             _command = Start;
         }

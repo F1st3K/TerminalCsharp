@@ -4,7 +4,7 @@ namespace Terminal.Commands
 {
     internal class Date : Command
     {
-        public Date() : base()
+        public Date(string name) : base(name)
         {
             _command += Start;
         }

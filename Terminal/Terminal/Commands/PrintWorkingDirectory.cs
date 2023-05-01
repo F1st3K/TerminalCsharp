@@ -4,7 +4,7 @@ namespace Terminal.Commands
 {
     internal class PrintWorkingDirectory : Command
     {
-        public PrintWorkingDirectory() : base()
+        public PrintWorkingDirectory(string name) : base(name)
         {
             PossibleKeys.Add("-L");
             PossibleKeys.Add("-P");

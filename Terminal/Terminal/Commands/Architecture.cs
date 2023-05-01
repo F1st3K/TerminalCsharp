@@ -4,7 +4,7 @@ namespace Terminal.Commands
 {
     internal class Architecture : Command
     {
-        public Architecture() : base()
+        public Architecture(string name) : base(name)
         {
             _command = Start;
         }
