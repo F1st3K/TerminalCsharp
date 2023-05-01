@@ -57,6 +57,7 @@
     <Compile Include="Commands\Processes.cs" />
     <Compile Include="Commands\Remove.cs" />
     <Compile Include="Commands\RemoveDirectory.cs" />
+    <Compile Include="Commands\Tail.cs" />
     <Compile Include="Commands\Touch.cs" />
     <Compile Include="Commands\WordCount.cs" />
     <Compile Include="Executor.cs" />

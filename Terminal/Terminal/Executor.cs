@@ -16,6 +16,7 @@ namespace Terminal
             { "rmdir", new RemoveDirectory("rmdir").Run},
             { "cat", new Concatenate("cat").Run},
             { "head", new Head("head").Run},
+            { "tail", new Tail("tail").Run},
             { "date", new Date("date").Run},
             { "rm", new Remove("rm").Run},
             { "touch", new Touch("touch").Run},
