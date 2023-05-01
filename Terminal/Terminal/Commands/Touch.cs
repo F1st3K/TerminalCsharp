@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Terminal.Commands
 {
-    class Touch : Command
+    internal class Touch : Command
     {
         public Touch() : base()
         {

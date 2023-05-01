@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Terminal.Commands
 {
-    class Remove : Command
+    internal class Remove : Command
     {
         public Remove() : base()
         {

@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace Terminal.Commands
 {
-    class Processes : Command
+    internal class Processes : Command
     {
         public Processes() : base()
         {

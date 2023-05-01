@@ -2,7 +2,7 @@
 
 namespace Terminal.Commands
 {
-    class Head : Command
+    internal class Head : Command
     {
         public Head() : base()
         {

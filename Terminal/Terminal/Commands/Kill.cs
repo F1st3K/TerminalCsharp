@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace Terminal.Commands
 {
-    class Kill : Command
+    internal class Kill : Command
     {
         public Kill() : base()
         {

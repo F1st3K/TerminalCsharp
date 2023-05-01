@@ -21,6 +21,7 @@ namespace Terminal
             { "touch", new Touch().Run},
             { "ps", new Processes().Run},
             { "kill", new Kill().Run},
+            { "wc", new WordCount().Run},
         };
         public bool CommandIsExist(string value)
         {

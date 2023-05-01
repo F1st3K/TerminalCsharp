@@ -2,7 +2,7 @@
 
 namespace Terminal.Commands
 {
-    class Date : Command
+    internal class Date : Command
     {
         public Date() : base()
         {
