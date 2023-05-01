@@ -22,6 +22,7 @@ namespace Terminal
             { "ps", new Processes("ps").Run},
             { "kill", new Kill("kill").Run},
             { "wc", new WordCount("wc").Run},
+            { "man", new Manual("man").Run},
         };
         public bool CommandIsExist(string value)
         {

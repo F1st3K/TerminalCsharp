@@ -7,34 +7,27 @@ namespace Terminal
     {
         public void Start()
         {
-            Console.WriteLine("Terminal is started:");
+            WriteColor("Welcome to the terminal emulator made -F1st3K -> ", ConsoleColor.Yellow);
+            WriteColor("https://github.com/F1st3K/\n", ConsoleColor.Cyan);
         }
 
         public string Run()
         {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write("┌──[");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Write(Environment.UserName);
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.Write("@");
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.Write(Environment.UserDomainName);
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write("]─[");
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write(Directory.GetCurrentDirectory().Replace("\\", "/"));
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write("]\n└──");
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.Write("$");
-            Console.ResetColor();
+
+            WriteColor("┌──[", ConsoleColor.Red);
+            WriteColor(Environment.UserName, ConsoleColor.White);
+            WriteColor("@", ConsoleColor.Yellow);
+            WriteColor(Environment.UserDomainName, ConsoleColor.Cyan);
+            WriteColor("]─[", ConsoleColor.Red);
+            WriteColor(Directory.GetCurrentDirectory().Replace("\\", "/"), ConsoleColor.Green);
+            WriteColor("]\n└──", ConsoleColor.Red);
+            WriteColor("$", ConsoleColor.Yellow);
             return Console.ReadLine();
         }
 
         public void Output(string value)
         {
-            Console.WriteLine(value);
+            WriteLineColor(value, ConsoleColor.Yellow);
         }
 
         public void Clear()
@@ -44,13 +37,25 @@ namespace Terminal
 
         public void CommandNotFound(string command)
         {
-            Console.WriteLine(command + ": command not found");
+            WriteLineColor(command + ": command not found", ConsoleColor.Red);
         }
 
         public void Stop()
         {
-            Console.WriteLine("Terminal is stoped!");
-            Console.ReadKey();
+            WriteLineColor("Bye!)", ConsoleColor.Cyan);
+        }
+
+        private void WriteColor(string value, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.Write(value);
+            Console.ResetColor();
+        }
+        private void WriteLineColor(string value, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.WriteLine(value);
+            Console.ResetColor();
         }
     }
 }
