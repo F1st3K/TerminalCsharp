@@ -49,6 +49,7 @@
     <Compile Include="Commands\Concatenate.cs" />
     <Compile Include="Commands\Copy.cs" />
     <Compile Include="Commands\Date.cs" />
+    <Compile Include="Commands\DiskUsage.cs" />
     <Compile Include="Commands\Head.cs" />
     <Compile Include="Commands\Kill.cs" />
     <Compile Include="Commands\ListFiles.cs" />

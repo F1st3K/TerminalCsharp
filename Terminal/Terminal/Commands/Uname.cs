@@ -2,7 +2,7 @@
 
 namespace Terminal.Commands
 {
-    class Uname : Command
+    internal class Uname : Command
     {
         public Uname(string name) : base(name)
         {

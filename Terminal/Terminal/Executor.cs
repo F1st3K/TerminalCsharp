@@ -26,6 +26,7 @@ namespace Terminal
             { "man", new Manual("man").Run},
             { "cp", new Copy("cp").Run},
             { "uname", new Uname("uname").Run},
+            { "du", new DiskUsage("du").Run},
         };
         public bool CommandIsExist(string value)
         {
