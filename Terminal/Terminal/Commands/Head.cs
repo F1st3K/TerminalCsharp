@@ -2,6 +2,9 @@
 
 namespace Terminal.Commands
 {
+    /// <summary>
+    /// Class <c>Head</c> show 10 start lines for file.
+    /// </summary>
     internal class Head : Command
     {
         public Head(string name) : base(name)

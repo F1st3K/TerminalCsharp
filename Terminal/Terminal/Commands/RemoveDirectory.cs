@@ -2,6 +2,9 @@
 
 namespace Terminal.Commands
 {
+    /// <summary>
+    /// Class <c>RemoveDirectory</c> remove directory.
+    /// </summary>
     internal class RemoveDirectory : Command
     {
         public RemoveDirectory(string name) : base(name)

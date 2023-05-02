@@ -1,12 +1,16 @@
 ﻿namespace Terminal
 {
+    /// <summary>
+    /// Class <c>Program</c> start point programm.
+    /// </summary>
     class Program
     {
+        //Run separate Task
         static async System.Threading.Tasks.Task Main(string[] args)
         {
             await System.Threading.Tasks.Task.Run(() => Work());
         }
-
+        //Main cycle
         static void Work()
         {
             var view = new View();

@@ -2,6 +2,9 @@
 
 namespace Terminal.Commands
 {
+    /// <summary>
+    /// Class <c>Uname</c> show information from pc.
+    /// </summary>
     internal class Uname : Command
     {
         public Uname(string name) : base(name)

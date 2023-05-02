@@ -2,6 +2,9 @@
 
 namespace Terminal.Commands
 {
+    /// <summary>
+    /// Class <c>Date</c> show date in custom format.
+    /// </summary>
     internal class Date : Command
     {
         public Date(string name) : base(name)

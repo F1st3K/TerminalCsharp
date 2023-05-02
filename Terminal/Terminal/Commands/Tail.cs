@@ -2,6 +2,9 @@
 
 namespace Terminal.Commands
 {
+    /// <summary>
+    /// Class <c>Tail</c> show last 10 lines for file.
+    /// </summary>
     internal class Tail : Command
     {
         public Tail(string name) : base(name)

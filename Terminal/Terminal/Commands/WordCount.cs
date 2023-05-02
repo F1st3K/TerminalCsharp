@@ -3,6 +3,9 @@ using System.IO;
 
 namespace Terminal.Commands
 {
+    /// <summary>
+    /// Class <c>WordCount</c> show count word, bytes or char in file.
+    /// </summary>
     internal class WordCount : Command
     {
         public WordCount(string name) : base(name)

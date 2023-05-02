@@ -3,6 +3,9 @@ using System.IO;
 
 namespace Terminal.Commands
 {
+    /// <summary>
+    /// Class <c>Copy</c> copy files and directoryes.
+    /// </summary>
     internal class Copy : Command
     {
         public Copy(string name) : base(name)

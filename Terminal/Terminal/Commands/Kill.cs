@@ -3,6 +3,9 @@ using System.Diagnostics;
 
 namespace Terminal.Commands
 {
+    /// <summary>
+    /// Class <c>Kill</c> kill process by pid.
+    /// </summary>
     internal class Kill : Command
     {
         public Kill(string name) : base(name)

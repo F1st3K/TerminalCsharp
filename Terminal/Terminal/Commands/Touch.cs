@@ -3,6 +3,9 @@ using System.IO;
 
 namespace Terminal.Commands
 {
+    /// <summary>
+    /// Class <c>Touch</c> create file or update his time used.
+    /// </summary>
     internal class Touch : Command
     {
         public Touch(string name) : base(name)

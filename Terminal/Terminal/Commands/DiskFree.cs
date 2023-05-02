@@ -4,6 +4,9 @@ using System.IO;
 
 namespace Terminal.Commands
 {
+    /// <summary>
+    /// Class <c>DiskFree</c> show information for disks.
+    /// </summary>
     internal class DiskFree : Command
     {
         public DiskFree(string name) : base(name)

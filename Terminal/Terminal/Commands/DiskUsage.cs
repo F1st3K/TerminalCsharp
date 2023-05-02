@@ -3,6 +3,9 @@ using System.IO;
 
 namespace Terminal.Commands
 {
+    /// <summary>
+    /// Class <c>DiskUsage</c> show usage memory directoryes and files.
+    /// </summary>
     internal class DiskUsage : Command
     {
         public DiskUsage(string name) : base(name)

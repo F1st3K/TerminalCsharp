@@ -2,9 +2,13 @@
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 
 namespace Terminal.Commands
 {
+    /// <summary>
+    /// Class <c>Manual</c> viewer manual documentation for commands.
+    /// </summary>
     internal class Manual : Command
     {
         public Manual(string name) : base(name)
@@ -47,6 +51,7 @@ namespace Terminal.Commands
                             break;
                     }
                     Render(lines, currentLine, Console.WindowHeight, _values[0]);
+                    Thread.Sleep(20);
                 }
             }
             catch (Exception ex)
@@ -65,7 +70,6 @@ namespace Terminal.Commands
             var output = string.Empty;
             string spase = String.Concat(Enumerable.Repeat(" ", Console.WindowWidth));
             spase = String.Concat(Enumerable.Repeat(spase + "\n", Console.WindowHeight));
-            Console.SetCursorPosition(0, 0);
             Console.Write(spase);
             Console.SetCursorPosition(0, 0);
             for (int i = start; i < start + maxLengh-1; i++)
@@ -83,6 +87,7 @@ namespace Terminal.Commands
             Console.ForegroundColor = ConsoleColor.Black;
             Console.Write($" Manual page {name} line {start + 1} (press q for quit)");
             Console.BackgroundColor = ConsoleColor.Black;
+            Console.SetCursorPosition(0, 0);
         }
     }
 }

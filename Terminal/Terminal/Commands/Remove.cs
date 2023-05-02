@@ -3,6 +3,9 @@ using System.IO;
 
 namespace Terminal.Commands
 {
+    /// <summary>
+    /// Class <c>Remove</c> remove file or directory.
+    /// </summary>
     internal class Remove : Command
     {
         public Remove(string name) : base(name)

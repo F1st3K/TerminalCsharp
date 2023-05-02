@@ -4,6 +4,9 @@ using System.IO;
 
 namespace Terminal.Commands
 {
+    /// <summary>
+    /// Class <c>Concatenate</c> output and input files.
+    /// </summary>
     internal class Concatenate : Command
     {
         public Concatenate(string name) : base(name)

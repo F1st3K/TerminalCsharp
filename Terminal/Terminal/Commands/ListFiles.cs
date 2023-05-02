@@ -3,6 +3,9 @@ using System.IO;
 
 namespace Terminal.Commands
 {
+    /// <summary>
+    /// Class <c>ListFiles</c> show entry files in directory.
+    /// </summary>
     internal class ListFiles : Command
     {
         public ListFiles(string name) : base(name)

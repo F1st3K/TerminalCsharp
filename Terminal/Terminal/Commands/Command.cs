@@ -5,13 +5,20 @@ using System.Reflection;
 
 namespace Terminal.Commands
 {
+    /// <summary>
+    /// Class <c>Command</c> base class for commands.
+    /// </summary>
     internal class Command
     {
+        //Current key on run command
         private protected List<string> _keys;
+        //Current values on run command
         private protected List<string> _values;
+        //Method start command
         private protected Func<string> _command;
+        //Name in man
         private protected string _name;
-
+        //Possible keys
         public List<string> PossibleKeys { get; private protected set; }
 
         public Command(string name)
@@ -22,7 +29,7 @@ namespace Terminal.Commands
             _name = name;
             PossibleKeys.Add("--help");
         }
-
+        //Start command
         public string Run(string[] arguments)
         {
             SeparateArguments(arguments);
@@ -41,7 +48,7 @@ namespace Terminal.Commands
                 }
             return _command.Invoke();
         }
-
+        //Separate value without keys
         private protected void SeparateArguments(string[] args)
         {
             _keys.Clear();
@@ -53,7 +60,7 @@ namespace Terminal.Commands
                 else _values.Add(arg);
             }
         }
-
+        //Check valid keys
         private protected string CheckKeys()
         {
             foreach (var key in _keys)

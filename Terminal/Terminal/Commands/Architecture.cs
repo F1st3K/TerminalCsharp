@@ -2,6 +2,9 @@
 
 namespace Terminal.Commands
 {
+    /// <summary>
+    /// Class <c>Architecture</c> print architecure.
+    /// </summary>
     internal class Architecture : Command
     {
         public Architecture(string name) : base(name)

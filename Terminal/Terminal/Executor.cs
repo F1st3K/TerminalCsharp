@@ -4,8 +4,12 @@ using Terminal.Commands;
 
 namespace Terminal
 {
+    /// <summary>
+    /// Class <c>Executor</c> execute commands.
+    /// </summary>
     internal sealed class Executor
     {
+        //Diction containe all commands
         private Dictionary<string, Func<string[], string>> _listCommands = new Dictionary<string, Func<string[], string>>()
         {
             { "ls", new ListFiles("ls").Run},
@@ -33,7 +37,7 @@ namespace Terminal
         {
             return _listCommands.ContainsKey(value);
         }
-
+        //Run command in dictionary
         public string RunCommand(string[] values)
         {
             if (values.Length < 1)

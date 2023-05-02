@@ -2,6 +2,9 @@
 
 namespace Terminal.Commands
 {
+    /// <summary>
+    /// Class <c>MakeDirectory</c> create new directory.
+    /// </summary>
     internal class MakeDirectory : Command
     {
         public MakeDirectory(string name) : base(name)

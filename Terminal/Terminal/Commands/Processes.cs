@@ -4,6 +4,9 @@ using System.Diagnostics;
 
 namespace Terminal.Commands
 {
+    /// <summary>
+    /// Class <c>Processes</c> show procesess by pid.
+    /// </summary>
     internal class Processes : Command
     {
         public Processes(string name) : base(name)
