@@ -31,6 +31,7 @@ namespace Terminal.Commands
                 catch (Exception ex)
                 {
                     output += "\n du: "+ file + ": " + ex.Message;
+                    continue;
                 }
             if (_keys.Contains("-c"))
             {
