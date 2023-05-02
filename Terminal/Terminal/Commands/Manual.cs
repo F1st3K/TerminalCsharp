@@ -13,6 +13,7 @@ namespace Terminal.Commands
 
         private string Start()
         {
+            var bufer = Console.BufferHeight;
             try
             {
                 if (_values.Count <= 0)
@@ -54,6 +55,7 @@ namespace Terminal.Commands
             Console.Clear();
             Console.ResetColor();
             Console.CursorVisible = true;
+            Console.BufferHeight = bufer;
             return string.Empty;
         }
 
