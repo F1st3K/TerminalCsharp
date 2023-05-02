@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 
 namespace Terminal.Commands
@@ -62,6 +63,10 @@ namespace Terminal.Commands
         private void Render(string[] lines, int start, int maxLengh, string name)
         {
             var output = string.Empty;
+            string spase = String.Concat(Enumerable.Repeat(" ", Console.WindowWidth));
+            spase = String.Concat(Enumerable.Repeat(spase + "\n", Console.WindowHeight));
+            Console.SetCursorPosition(0, 0);
+            Console.Write(spase);
             Console.SetCursorPosition(0, 0);
             for (int i = start; i < start + maxLengh-1; i++)
             {
