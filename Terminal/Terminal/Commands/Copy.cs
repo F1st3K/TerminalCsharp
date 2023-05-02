@@ -8,6 +8,7 @@ namespace Terminal.Commands
         public Copy(string name) : base(name)
         {
             PossibleKeys.Add("-f");
+            PossibleKeys.Add("-v");
             PossibleKeys.Add("-i");
             PossibleKeys.Add("-n");
             _command = Start;
@@ -32,13 +33,13 @@ namespace Terminal.Commands
                             return output;
                     }
                     File.Copy(current + _values[0], destFile, true);
+                    if (_keys.Contains("-v"))
+                        output += "\n" + _values[0] + " -> " + destFile;
                     return output;
                 }
                 if (Directory.Exists(destFile) ||
                     Directory.Exists(Directory.GetParent(destFile).FullName))
                 {
-                    if (_values.Count == 2)
-
                     for (int i = 0; i < _values.Count - 1; i++)
                     {
                         current = string.Empty;
@@ -47,11 +48,15 @@ namespace Terminal.Commands
                         if (File.Exists(current + _values[i]))
                         {
                             CopyFile(current + _values[i], destFile);
-                        }
+                            if (_keys.Contains("-v"))
+                                output += "\n" + _values[i] + " -> " + destFile;
+                            }
                         else if (Directory.Exists(current + _values[i]))
                         {
                             CopyDirectory(current + _values[i], destFile);
-                        }
+                            if (_keys.Contains("-v"))
+                                output += "\n" + _values[i] + " -> " + destFile;
+                            }
                         else
                         {
                             throw new ArgumentException(_values[i] + ": No such file or directory ");

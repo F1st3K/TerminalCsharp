@@ -25,6 +25,7 @@ namespace Terminal
             { "wc", new WordCount("wc").Run},
             { "man", new Manual("man").Run},
             { "cp", new Copy("cp").Run},
+            { "uname", new Uname("uname").Run},
         };
         public bool CommandIsExist(string value)
         {
