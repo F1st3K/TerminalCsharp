@@ -1,0 +1,10 @@
+Usage: df [OPTION]... [FILE]...
+Show information about the file system on which each FILE resides,
+or all file systems by default.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -a, --all             include pseudo, duplicate, inaccessible file systems
+  -H, --si              print sizes in powers of 1000 (e.g., 1.1G)
+  -k                    like --block-size=1K
+
+      --help     display this help and exit

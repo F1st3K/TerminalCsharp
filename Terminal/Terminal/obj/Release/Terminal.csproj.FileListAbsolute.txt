@@ -1,0 +1,7 @@
+C:\repos\week3\Terminal\Terminal\bin\Release\Terminal.exe.config
+C:\repos\week3\Terminal\Terminal\bin\Release\Terminal.exe
+C:\repos\week3\Terminal\Terminal\bin\Release\Terminal.pdb
+C:\repos\week3\Terminal\Terminal\obj\Release\Terminal.csproj.AssemblyReference.cache
+C:\repos\week3\Terminal\Terminal\obj\Release\Terminal.csproj.CoreCompileInputs.cache
+C:\repos\week3\Terminal\Terminal\obj\Release\Terminal.exe
+C:\repos\week3\Terminal\Terminal\obj\Release\Terminal.pdb

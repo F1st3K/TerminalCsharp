@@ -1,0 +1,4 @@
+Usage: arch [OPTION]...
+Print machine architecture.
+
+      --help     display this help and exit

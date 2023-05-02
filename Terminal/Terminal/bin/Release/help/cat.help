@@ -1,0 +1,9 @@
+Usage: cat [OPTION]... [FILE]...
+Concatenate FILE(s) to standard output.
+
+With no FILE, or when FILE is -, read standard input.
+
+  -b, --number-nonblank    number nonempty output lines, overrides -n
+  -T, --show-tabs          display TAB characters as ^I
+  ->                       input in file
+      --help     display this help and exit

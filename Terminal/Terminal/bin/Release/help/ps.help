@@ -1,0 +1,10 @@
+Usage: ps [-p PID]
+
+Report process status
+
+ -a, --all       show processes of all users
+ -e, --everyone  show processes of all users
+ -p, --process   show information for specified PID
+     --help      output usage information and exit
+
+With no options, ps outputs the long format by default

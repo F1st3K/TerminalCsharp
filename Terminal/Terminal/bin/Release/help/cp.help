@@ -1,0 +1,14 @@
+Usage: cp [OPTION]... SOURCE... DIRECTORY
+Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -f  (ignored)
+  -v, --verbose                explain what is being done
+  -i, --interactive            prompt before overwrite (overrides a previous -n option)
+  -n, --no-clobber             do not overwrite an existing file (overrides a previous -i option)
+      --help                   display this help and exit      
+
+By default, sparse SOURCE files are detected by a crude heuristic and the
+corresponding DEST file is made sparse as well.  That is the behavior
+selected by --sparse=auto.  Specify --sparse=always to create a sparse DEST
+file whenever the SOURCE file contains a long enough sequence of zero bytes.                                                                                                                                                                    By default, sparse SOURCE files are detected by a crude heuristic and the                                                              corresponding DEST file is made sparse as well.  That is the behavior                                                                  selected by --sparse=auto.  Specify --sparse=always to create a sparse DEST                                                            file whenever the SOURCE file contains a long enough sequence of zero bytes.                                                           Use --sparse=never to inhibit creation of sparse files.

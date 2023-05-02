@@ -1,0 +1,11 @@
+kill: kill [-n signum ] pid
+    Send a signal to a job.
+
+    Send the processes identified by PID or JOBSPEC the signal named by
+    SIGSPEC or SIGNUM.  If neither SIGSPEC nor SIGNUM is present, then
+    SIGTERM is assumed.
+
+Options:
+  -n sig         SIG is a signal number
+  -v, --verbose  always print headers giving file names
+      --help     display this help and exit
